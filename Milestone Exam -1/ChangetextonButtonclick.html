@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChangeTextOnButtonClick</title>
+</head>
+<body>
+    <center>
+        <h1 id="text">The most affordable learnging platform</h1>
+        <button onClick="changeText()">Click Me 👍</button>
+    </center>
+
+    <script>
+        let changeText = () => {
+            let x = document.querySelector("#text");
+            if(x.innerHTML == "The most afforadable learnig platform") {
+                x.innerHTML = "PW Skills";
+            }
+            else x.innerHTML = "The Best Web devlopment course"
+        }
+    </script>
+</body>
+</html>

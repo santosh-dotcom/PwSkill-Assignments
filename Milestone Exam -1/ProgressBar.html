@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar</title>
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex; 
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+        }
+
+        .progress-container {
+            height: 10px;
+            width: 100%;
+            background-color: #000;
+            position: fixed;
+            top: 0;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0;
+            background-color: #bdff23;
+        }
+
+        .main-container {
+            width: 90%;
+        }
+
+        .main-container p {
+            text-align: justify;
+            color: #808080;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar"></div>
+    </div>
+
+    <div class="main-container">
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, ipsam!
+        </p>
+    </div>
+
+    <script>
+        let progressbar = document.querySelector(".progress-bar");
+
+        let onscroll = () => {
+            progressbar.style.width = `${((window.scrollY) / (document.body.scrollHeight - window.innerHeight) * 100)}%`;
+            requestAnimationFrame(onscroll);
+        }
+
+        onscroll();
+    </script>
+</body>
+</html>
